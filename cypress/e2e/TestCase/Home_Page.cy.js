@@ -47,34 +47,7 @@ describe('Validating the logo functionality', ()=>{
 
 
 
-          homePage.userNameInputField(data.firstName)
-          homePage.passwordInputField(data.userPassword)
-          homePage.registerLink().click()
-          registerPage.signupHeading()
-          registerPage.notificationMessage()
-          registerPage.firstName()
-          registerPage.firstNameInputField(data.firstName)
-          registerPage.lastName()
-          registerPage.lastNameInputField(data.lastName)
-          registerPage.address()
-          registerPage.addressInputField(data.address)
-          registerPage.city()
-          registerPage.cityInputField(data.city)
-          registerPage.state()
-          registerPage.stateInputField(data.state)
-          registerPage.zipCode()
-          registerPage.zipCodeInputField(data.zipCode)
-          registerPage.phoneNumber()
-          registerPage.phoneNumberInputField(data.phoneNumber)
-          registerPage.sSN()
-          registerPage.sSnInputField(data.SSN)
-          registerPage.userName()
-          registerPage.userNameInputField(data.userName)
-          registerPage.password()
-          registerPage.passwordInputField(data.userPassword)
-          registerPage.confirmPassword()
-          registerPage.confirmPasswordInputField(data.userConfirmPassword)
-          registerPage.registerButt
+          
           
 
 
