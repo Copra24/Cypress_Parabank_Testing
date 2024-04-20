@@ -1,4 +1,17 @@
 
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "243 Main St, Apt 2",
+    "city": "Albany",
+    "state": "NY",
+    "zipCode": "001",
+    "phoneNumber": "(555) 123-4567",
+    "SSN": "563-93-4927",
+    "userName": "john24",
+    "userPassword": "John2424",
+    "userConfirmPassword": "John2424"
+}
 
 
   
