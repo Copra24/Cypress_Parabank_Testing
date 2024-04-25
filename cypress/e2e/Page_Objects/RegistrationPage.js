@@ -143,13 +143,6 @@ registerButton(){
 
 
 
-
-
-
-
-
-
-
     
 
 } export default RegistrationPageObjects
