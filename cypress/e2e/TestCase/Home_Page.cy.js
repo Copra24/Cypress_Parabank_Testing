@@ -219,7 +219,7 @@ it('Verifying the elements within the second column are displayed as expected', 
        
  //Validating the Bottom Read More Element
  //Asserting url is rendered as expected after clicking on element
- it.only('Verifying clicking on bottom READMORE will redirect to expected url', ()=>{
+ it('Verifying clicking on bottom READMORE will redirect to expected url', ()=>{
     homePage.parabankLogo()
     .click()
     homePage.bottomReadMore()
