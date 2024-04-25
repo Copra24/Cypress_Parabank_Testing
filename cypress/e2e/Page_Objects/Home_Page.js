@@ -24,31 +24,31 @@ solutionsHeading(){
 
 //Captures the About Us navigation link
 aboutUsNavLink(){
-    return cy.contains('About Us')
+    return cy.contains('a', 'About Us')
     
 }
 
 //Captures the Services navigation link
 servicesNavLink(){
-    return cy.contains('Services')
+    return cy.contains('a', 'Services')
     
 }
 
 //Captures the products link
 productsNavLink(){
-    return cy.contains('Products')
+    return cy.contains('a', 'Products')
     
 }
 
 //Captures the Locations link
 locationsNavLink(){
-    return cy.contains('Locations')
+    return cy.contains('a','Locations')
     
 }
 
 //Captures the Admin Page link
 adminPageNavLink(){
-    return cy.contains('Admin Page')
+    return cy.contains('a', 'Admin Page')
     
 }
 
@@ -103,8 +103,36 @@ registerLink(){
     return cy.contains('Register')
     
 }
+
+parabankLogo(){
+    return cy.get('.logo')
+}
+
+AtmServicesVerification(){
+    return cy.get('.captionone')
+}
+
+topTableColumnTwo(){
+    return cy.get('ul.services')
+
+   
+}
+topTableColumnThree(){
+    return cy.get('ul.servicestwo')
+}
+
+topReadMore(){
+    return cy.contains('a', 'Read More')
+}
+
+bottomTableColumnTwo(){
+    return cy.get('ul.events')
+}
     
 
+bottomReadMore(){
+    return cy.get('#rightPanel > :nth-child(7) > a')
+}
 
 
 } export default HomePageObjects
