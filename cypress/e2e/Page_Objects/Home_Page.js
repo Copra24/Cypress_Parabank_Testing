@@ -24,13 +24,13 @@ solutionsHeading(){
 
 //Captures the About Us navigation link
 aboutUsNavLink(){
-    return cy.contains('a', 'About Us')
+    return cy.get('.leftmenu > :nth-child(2) > a')
     
 }
 
 //Captures the Services navigation link
 servicesNavLink(){
-    return cy.contains('a', 'Services')
+    return cy.get('.leftmenu > :nth-child(3) > a')
     
 }
 

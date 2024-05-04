@@ -2,7 +2,16 @@ class RegistrationPageObjects{
 
     //Captures the title on Registration page    
 signupHeading(){
-    return cy.get('.title').should('have.text', 'Signing up is easy!')
+    return cy.get('.title')
+    .should('have.text', 'Signing up is easy!')
+  
+
+}
+registerUrl(){
+    return cy.contains('Register')
+    .should('have.css', 'text-decoration', 'underline solid rgb(0, 37, 142)')
+    .click()
+
 }
 
 //Captures notification message
@@ -140,6 +149,116 @@ confirmPasswordInputField(value){
 registerButton(){
     return cy.get('input[value ="Register"').click() 
 }
+
+//Captures the welcome message
+WelcomeMassage(){
+    return cy.get('div#bodyPanel div').eq(1)
+    .find('h1.title')
+    .should('be.visible')
+   
+
+}
+
+//Reinintailizes the database
+initalizeDataBase(){
+    return cy.contains('a', 'Admin Page')
+    .click()
+    .find(form)
+}
+
+
+firstNameRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(0)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text','First name is required.')
+
+}
+
+lastNameRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(1)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text','Last name is required.')
+
+}
+
+addressRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(2)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'Address is required.')
+
+}
+
+cityRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(3)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'City is required.')
+
+}
+
+stateRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(4)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'State is required.')
+
+}
+
+zipCodeRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(5)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'Zip Code is required.')
+
+}
+
+
+ssnCodeRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(7)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'Social Security Number is required.')
+
+}
+
+userNameRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(9)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'Username is required.')
+
+}
+passwordRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(10)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'Password is required.')
+
+}
+
+confirmPasswordRequiredError(){
+    return cy.get('table.form2 tbody tr').eq(11)
+    .find('td').eq(2)
+    .find('span') 
+    .should('exist')
+    .should('have.text', 'Password confirmation is required.')
+
+}
+
+
+
 
 
 

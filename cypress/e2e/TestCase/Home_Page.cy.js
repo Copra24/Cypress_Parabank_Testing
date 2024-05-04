@@ -25,8 +25,6 @@ describe('Validating the logo functionality and pages', ()=>{
 
 
    //Validating the Top table Elements
-
-
     it('Verifying the second column of box contains 5 elements', ()=>{
         homePage.parabankLogo()
         .click()
@@ -139,7 +137,7 @@ describe('Validating the logo functionality and pages', ()=>{
     
     })
 
-   //Validating the ToP Read More Element
+   
    //Asserting url is rendered as expected after clicking
    it('Verifying clicking on first READMORE, will redirect to expected url', ()=>{
     homePage.parabankLogo()
@@ -152,8 +150,6 @@ describe('Validating the logo functionality and pages', ()=>{
 })
 
       
-      
-
     
    //Validating the Bootom table Elements
        
@@ -229,52 +225,536 @@ it('Verifying the elements within the second column are displayed as expected', 
 
 })
 
-       
-
-
-       
-    // cy.fixture('parabank').then((data)=>{
-
-
-    //     // homePage.solutionsHeading().should('have.text', 'Solutions')
-       
-    //            //   homePage.userNameInputField(data.firstName)
-    //            //   homePage.passwordInputField(data.userPassword)
-    //            //   homePage.registerLink().click()
-    //            //   registerPage.signupHeading()
-    //            //   registerPage.notificationMessage()
-    //            //   registerPage.firstName()
-    //            //   registerPage.firstNameInputField(data.firstName)
-    //            //   registerPage.lastName()
-    //            //   registerPage.lastNameInputField(data.lastName)
-    //            //   registerPage.address()
-    //            //   registerPage.addressInputField(data.address)
-    //            //   registerPage.city()
-    //            //   registerPage.cityInputField(data.city)
-    //            //   registerPage.state()
-    //            //   registerPage.stateInputField(data.state)
-    //            //   registerPage.zipCode()
-    //            //   registerPage.zipCodeInputField(data.zipCode)
-    //            //   registerPage.phoneNumber()
-    //            //   registerPage.phoneNumberInputField(data.phoneNumber)
-    //            //   registerPage.sSN()
-    //            //   registerPage.sSnInputField(data.SSN)
-    //            //   registerPage.userName()
-    //            //   registerPage.userNameInputField(data.userName)
-    //            //   registerPage.password()
-    //            //   registerPage.passwordInputField(data.userPassword)
-    //            //   registerPage.confirmPassword()
-    //            //   registerPage.confirmPasswordInputField(data.userConfirmPassword)
-    //            //   registerPage.registerButton()
-       
-       
-       
-    //            })
         
         
 })
 
-describe('Validating the Header navigation links', ()=>{
+
+
+describe('Validating the Registeration link', ()=>{
+
+    beforeEach(() => {
+        registerPage.registerUrl()
+    });
+    
+    it('Verifying clicking on the Register link navigates to Registration page', ()=>{
+        registerPage.signupHeading()
+        
+
+    })
+
+    it.only('Verifying if user account will be created when all fields are entered with valid information', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 registerPage.registerButton()
+
+                 registerPage.WelcomeMassage()
+                 .should('have.text','Welcome' + data.userName) 
+
+                //ACCOUNT SUCESSFULLY CREATED MESSAGE SHOULD BE DIPLAYED HERE************
+       
+       
+       
+               })
+       
+
+    })
+
+    it('Verifying form will submit when First name field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+                
+         //*****  Last field is obmitted
+                //registerPage.firstName()
+                //registerPage.firstNameInputField(data.firstName)
+
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts First name required error message is displayed
+                 registerPage.firstNameRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+
+    it('Verifying form will submit when Last name field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+
+         //*****  Last field is obmitted
+                 //registerPage.lastName()
+                 //registerPage.lastNameInputField(data.lastName)
+
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts Last name required error message is displayed
+                 registerPage.lastNameRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+    it('Verifying form will submit when Address field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+
+          //*****  Address field is obmitted
+                 //registerPage.address()
+                // registerPage.addressInputField(data.address)
+
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts address  required error message is displayed
+                 registerPage.addressRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+    it('Verifying form will submit when City field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+
+         //*****  City field is obmitted
+                 // registerPage.city()
+                 //registerPage.cityInputField(data.city)
+
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts City  required error message is displayed
+                 registerPage.cityRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+    
+    it('Verifying form will submit when State field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+
+            //*****  State field is obmitted
+                 //registerPage.state()
+                // registerPage.stateInputField(data.state)
+
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts State  required error message is displayed
+                 registerPage.stateRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+    
+    it('Verifying form will submit when Zipcode field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+
+            //*****  Zipcode field is obmitted
+               //registerPage.zipCode()
+                //registerPage.zipCodeInputField(data.zipCode)
+
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts Zipcode required error message is displayed
+                 registerPage.zipCodeRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+
+    it('Verifying form will submit when Zipcode field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 
+            //*****  Phone number field is obmitted
+                 //registerPage.phoneNumber()
+                 //registerPage.phoneNumberInputField(data.phoneNumber)
+
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+
+                 //ACCOUNT SUCESSFULLY CREATED MESSAGE SHOULD BE DIPLAYED HERE************
+                 
+                 
+    
+                 
+                })
+       
+
+    })
+
+
+
+    it('Verifying form will submit when SSN field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+
+        //*****  SSN field is obmitted
+                //registerPage.sSN()
+                //registerPage.sSnInputField(data.SSN)
+
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts SNN required error message is displayed
+                 registerPage.ssnCodeRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+
+    
+    it('Verifying form will submit when Username field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                registerPage.sSN()
+                registerPage.sSnInputField(data.SSN)
+
+          //*****  Username field is obmitted
+                //  registerPage.userName()
+                //  registerPage.userNameInputField(data.userName)
+
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts Username required error message is displayed
+                 registerPage.userNameRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+
+    it('Verifying form will submit when Password field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+          
+          //*****  Password field is obmitted
+                //  registerPage.password()
+                //  registerPage.passwordInputField(data.userPassword)
+
+                 registerPage.confirmPassword()
+                 registerPage.confirmPasswordInputField(data.userConfirmPassword)
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts Password required error message is displayed
+                 registerPage.passwordRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+
+
+    it('Verifying form will submit when Confirm Password field is obmitted while other fields are filled out correctly', ()=>{
+
+        cy.fixture('parabank').then((data)=>{
+
+                 registerPage.firstName()
+                 registerPage.firstNameInputField(data.firstName)
+                 registerPage.lastName()
+                 registerPage.lastNameInputField(data.lastName)
+                 registerPage.address()
+                 registerPage.addressInputField(data.address)
+                 registerPage.city()
+                 registerPage.cityInputField(data.city)
+                 registerPage.state()
+                 registerPage.stateInputField(data.state)
+                 registerPage.zipCode()
+                 registerPage.zipCodeInputField(data.zipCode)
+                 registerPage.phoneNumber()
+                 registerPage.phoneNumberInputField(data.phoneNumber)
+                 registerPage.sSN()
+                 registerPage.sSnInputField(data.SSN)
+                 registerPage.userName()
+                 registerPage.userNameInputField(data.userName)
+                 registerPage.password()
+                 registerPage.passwordInputField(data.userPassword)
+          
+         //*****  Confirm Password field is obmitted
+                 //  registerPage.confirmPassword()
+                 //  registerPage.confirmPasswordInputField(data.userConfirmPassword)
+
+                 //clicks on register button
+                 registerPage.registerButton()
+                 
+                 //Asserts Confirm Password required error message is displayed
+                 registerPage.confirmPasswordRequiredError()
+    
+                 
+                })
+       
+
+    })
+
+
+
 
 
 

@@ -21,9 +21,11 @@ footerForumNav(){
 
 
 
-
-
-
+footerElementsVerification(){
+    this.footerHomeNav
+    .click()
+    .should('eq', 'https://www.parasoft.com/products/')
+}
 
 
 
