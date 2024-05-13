@@ -27,14 +27,13 @@ Use the cd command to navigate to the directory where your Cypress project is lo
 
 Use the following command to run Cypress tests:
 
-bash
 Copy code
-npx cypress run
+## npx cypress run
 This command runs all the tests in your Cypress project in headless mode, meaning without the graphical user interface (GUI).
 ## or 
-bash
+
 Copy code
-npx cypress open
+## npx cypress open
 This command runs all the tests in your Cypress project in headed mode, meaining with GUI displayed
 
 
