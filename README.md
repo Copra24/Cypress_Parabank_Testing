@@ -1,6 +1,6 @@
 # Cypress Testing for Parabank demo App
 
-This repository contains automated tests for the Parabank web application using Cypress.
+This repository contains automated tests for the Parabank web application using Cypress testing framework with javascript.
 
 ## Introduction
 
